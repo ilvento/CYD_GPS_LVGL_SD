@@ -75,16 +75,16 @@ String satellites;
 void writeFile(fs::FS &fs, const char * path, const char * message) {
 	// Write to the SD card (DON'T MODIFY THIS FUNCTION)
 	Serial.printf("Writing file: %s\n", path);
-
+	
 	File file = fs.open(path, FILE_WRITE);
 	if (!file) {
-		Serial.println("Failed to open file for writing");
-		return;
+	Serial.println("Failed to open file for writing");
+	return;
 	}
 	if (file.print(message)) {
-		Serial.println("File written");
+	Serial.println("File written");
 	} else {
-		Serial.println("Write failed");
+	Serial.println("Write failed");
 	}
 	file.close();
 }
